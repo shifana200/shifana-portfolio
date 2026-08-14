@@ -51,7 +51,7 @@ export function Contact() {
       subtitle="Have an opportunity or want to discuss a project? I'd love to hear from you."
       muted
     >
-      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <ul className="space-y-3">
           {[
             {
@@ -79,7 +79,7 @@ export function Contact() {
               >
                 <Icon className="size-4" />
               </span>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   {label}
                 </p>
