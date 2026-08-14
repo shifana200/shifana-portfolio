@@ -7,8 +7,8 @@ const stack = ["MongoDB", "Express.js", "React", "Node.js"];
 export function Hero() {
   return (
     <section id="home" aria-labelledby="hero-heading" className="pt-28 pb-16 md:pt-36 md:pb-24">
-      <div className="container-page grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-        <div className="reveal">
+      <div className="container-page grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="min-w-0 reveal">
           <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
             <MapPin className="size-3.5 text-accent" aria-hidden="true" />
             {profile.location} · Open to opportunities
@@ -61,7 +61,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="reveal" style={{ animationDelay: "120ms" }}>
+        <div className="min-w-0 reveal" style={{ animationDelay: "120ms" }}>
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-lift)]">
             <div className="flex items-center gap-2 border-b border-border bg-secondary/70 px-4 py-3">
               <span aria-hidden="true" className="size-2.5 rounded-full bg-destructive/60" />
