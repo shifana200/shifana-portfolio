@@ -1,51 +1,78 @@
-import { Check } from "lucide-react";
+import { Code2, Database, GitBranch, Server } from "lucide-react";
 import { Section } from "@/components/Section";
 
-const highlights = [
-  "Full Stack Development",
-  "MERN Stack",
-  "REST API Development",
-  "Responsive UI",
-  "Database Management",
+const focusAreas = [
+  {
+    icon: Code2,
+    title: "Frontend",
+    skills: "React · TypeScript · Tailwind CSS",
+  },
+  {
+    icon: Server,
+    title: "Backend",
+    skills: "Node.js · Express.js · REST APIs",
+  },
+  {
+    icon: Database,
+    title: "Database",
+    skills: "MongoDB · Mongoose · MySQL",
+  },
+  {
+    icon: GitBranch,
+    title: "Development",
+    skills: "Git · GitHub · Postman · Figma",
+  },
 ];
 
 export function About() {
   return (
-    <Section id="about" eyebrow="About" title="About Me" muted>
-      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+    <Section id="about" eyebrow="About" title="About me" muted>
+      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-14">
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
           <p>
-            I am a Full Stack MERN Developer who became interested in web development because I enjoy
-            building functional, user-friendly web applications.
+            I&apos;m a Full Stack MERN Developer focused on building responsive
+            and practical web applications. I enjoy working across both
+            frontend and backend development, from creating intuitive React
+            interfaces to building REST APIs and database-driven applications
+            with Node.js, Express and MongoDB.
           </p>
+
           <p>
-            I have trained in the MERN stack and have hands-on experience building frontend
-            interfaces, REST APIs, authentication systems, database-driven applications, and complete
-            web application workflows.
+            I&apos;ve built complete applications with features such as
+            authentication, OTP verification, product management, cart and
+            checkout workflows, payment integration and admin functionality.
           </p>
+
           <p>
-            I enjoy transforming ideas into practical digital products and continuously improving my
-            development skills.
+            I&apos;m currently looking for an opportunity where I can contribute
+            to real-world products, strengthen my engineering skills and grow
+            as part of a collaborative development team.
           </p>
         </div>
 
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-            Core Focus Areas
-          </h3>
-          <ul className="mt-4 space-y-3">
-            {highlights.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm font-medium">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          {focusAreas.map(({ icon: Icon, title, skills }) => (
+            <article
+              key={title}
+              className="rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-soft)] transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[var(--shadow-lift)]"
+            >
+              <div className="flex items-start gap-4">
                 <span
                   aria-hidden="true"
-                  className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-accent-soft text-accent"
+                  className="grid size-10 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent"
                 >
-                  <Check className="size-3" />
+                  <Icon className="size-5" />
                 </span>
-                {item}
-              </li>
-            ))}
-          </ul>
+
+                <div className="min-w-0">
+                  <h3 className="text-sm font-semibold">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                    {skills}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </Section>

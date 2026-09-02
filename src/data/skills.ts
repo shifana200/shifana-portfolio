@@ -16,9 +16,7 @@ export const skillGroups: SkillGroup[] = [
       "JavaScript",
       "TypeScript",
       "React",
-      "React Router",
       "Tailwind CSS",
-      "Responsive Design",
     ],
   },
   {
@@ -29,7 +27,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Databases",
     icon: Database,
-    items: ["MongoDB", "Mongoose", "MySQL", "SQL"],
+    items: ["MongoDB", "Mongoose", "MySQL"],
   },
   {
     title: "Tools & Technologies",
