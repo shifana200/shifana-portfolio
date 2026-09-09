@@ -7,13 +7,49 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter((section): section is Element => Boolean(section));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible[0]?.target.id) {
+          setActiveSection(visible[0].target.id);
+        }
+      },
+      {
+        rootMargin: "-20% 0px -65% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
   }, []);
+
+  const linkClass = (href: string, mobile = false) =>
+    cn(
+      "rounded-md font-medium transition-colors",
+      mobile ? "block px-2 py-3 text-base" : "px-3 py-2 text-sm",
+      activeSection === href.slice(1)
+        ? "bg-accent-soft text-accent"
+        : "text-muted-foreground hover:text-accent",
+    );
 
   return (
     <header
@@ -35,11 +71,7 @@ export function Navbar() {
 
         <nav aria-label="Main navigation" className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-accent"
-            >
+            <a key={link.href} href={link.href} className={linkClass(link.href)}>
               {link.label}
             </a>
           ))}
@@ -72,7 +104,7 @@ export function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-2 py-3 text-base font-medium text-foreground transition-colors hover:text-accent"
+                  className={linkClass(link.href, true)}
                 >
                   {link.label}
                 </a>
