@@ -16,7 +16,7 @@ export function Section({ id, eyebrow, title, subtitle, children, className, mut
     <section
       id={id}
       aria-labelledby={title ? `${id}-heading` : undefined}
-      className={cn("section-y", muted && "bg-secondary/60 border-y border-border", className)}
+      className={cn("section-y scroll-mt-20", muted && "bg-secondary/60 border-y border-border", className)}
     >
       <div className="container-page">
         {(eyebrow || title || subtitle) && (
@@ -25,17 +25,17 @@ export function Section({ id, eyebrow, title, subtitle, children, className, mut
             {title && (
               <h2
                 id={`${id}-heading`}
-                className="mt-3 text-2xl font-bold sm:text-3xl md:text-4xl"
+                className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl"
               >
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="mt-3 text-base leading-relaxed text-muted-foreground">{subtitle}</p>
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground">{subtitle}</p>
             )}
           </div>
         )}
-        <div className={cn(eyebrow || title ? "mt-10 md:mt-12" : undefined)}>{children}</div>
+        <div className={cn(eyebrow || title ? "mt-7 md:mt-8" : undefined)}>{children}</div>
       </div>
     </section>
   );
