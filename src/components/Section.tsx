@@ -11,39 +11,50 @@ type SectionProps = {
   muted?: boolean;
 };
 
-export function Section({ id, eyebrow, title, subtitle, children, className, muted }: SectionProps) {
+export function Section({
+  id,
+  eyebrow,
+  title,
+  subtitle,
+  children,
+  className,
+  muted,
+}: SectionProps) {
   return (
     <section
       id={id}
       aria-labelledby={title ? `${id}-heading` : undefined}
-      className={cn("section-y scroll-mt-20", muted && "bg-secondary/60 border-y border-border", className)}
+      className={cn(
+        "section-y",
+        muted && "border-y border-border bg-secondary/60",
+        className,
+      )}
     >
       <div className="container-page">
         {(eyebrow || title || subtitle) && (
           <div className="max-w-2xl">
             {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+
             {title && (
               <h2
                 id={`${id}-heading`}
-                className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl"
+                className="mt-1.5 text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 {title}
               </h2>
             )}
+
             {subtitle && (
-<<<<<<< HEAD
-              <p className="mt-2 text-base leading-relaxed text-muted-foreground">{subtitle}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                {subtitle}
+              </p>
             )}
           </div>
         )}
-        <div className={cn(eyebrow || title ? "mt-7 md:mt-8" : undefined)}>{children}</div>
-=======
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{subtitle}</p>
-            )}
-          </div>
-        )}
-        <div className={cn(eyebrow || title ? "mt-6 md:mt-7" : undefined)}>{children}</div>
->>>>>>> 88b78f3 (Fix section and hero spacing)
+
+        <div className={cn(eyebrow || title ? "mt-6 md:mt-7" : undefined)}>
+          {children}
+        </div>
       </div>
     </section>
   );
