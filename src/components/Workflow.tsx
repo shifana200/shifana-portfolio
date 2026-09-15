@@ -13,7 +13,7 @@ export function Workflow() {
     <Section id="workflow" eyebrow="Process" title="Development Approach" muted>
       <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {steps.map((step) => (
-          <li key={step.no} className="rounded-xl border border-border bg-card p-5">
+          <li key={step.no} className="rounded-xl border border-border bg-card p-4 sm:p-5">
             <p className="font-mono text-sm font-bold text-accent">{step.no}</p>
             <h3 className="mt-2 text-base font-semibold">{step.title}</h3>
             <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{step.text}</p>

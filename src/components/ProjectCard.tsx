@@ -52,7 +52,7 @@ export function ProjectCard({
       <div
         className={
           featured
-            ? "flex flex-col justify-center p-6 sm:p-8 lg:p-10"
+            ? "flex flex-col justify-center p-5 sm:p-7 lg:p-8"
             : "flex flex-1 flex-col p-5 sm:p-6"
         }
       >
@@ -76,7 +76,7 @@ export function ProjectCard({
         <h3
           className={
             featured
-              ? "mt-5 text-2xl font-bold leading-tight sm:text-3xl"
+              ? "mt-4 text-2xl font-bold leading-tight sm:text-3xl"
               : "mt-3 text-lg font-semibold leading-snug"
           }
         >
@@ -97,7 +97,7 @@ export function ProjectCard({
         <p
           className={
             featured
-              ? "mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base"
+              ? "mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base"
               : "mt-2.5 text-sm leading-relaxed text-muted-foreground"
           }
         >
@@ -107,7 +107,7 @@ export function ProjectCard({
         {/* PROJECT METRICS */}
         {featured && (
           <div className="mt-7 grid grid-cols-3 gap-3">
-            <div className="rounded-xl border border-accent/20 bg-accent-soft/60 p-4 text-center">
+            <div className="rounded-xl border border-accent/20 bg-accent-soft/60 p-3 sm:p-4 text-center">
               <p className="text-2xl font-bold text-accent sm:text-3xl">
                 20+
               </p>
@@ -116,7 +116,7 @@ export function ProjectCard({
               </p>
             </div>
 
-            <div className="rounded-xl border border-accent/20 bg-accent-soft/60 p-4 text-center">
+            <div className="rounded-xl border border-accent/20 bg-accent-soft/60 p-3 sm:p-4 text-center">
               <p className="text-2xl font-bold text-accent sm:text-3xl">
                 6
               </p>
@@ -125,7 +125,7 @@ export function ProjectCard({
               </p>
             </div>
 
-            <div className="rounded-xl border border-accent/20 bg-accent-soft/60 p-4 text-center">
+            <div className="rounded-xl border border-accent/20 bg-accent-soft/60 p-3 sm:p-4 text-center">
               <p className="text-2xl font-bold text-accent sm:text-3xl">
                 Full
               </p>
@@ -138,7 +138,7 @@ export function ProjectCard({
 
         {/* TECHNOLOGIES */}
         {tech.length > 0 && (
-          <div className="mt-6">
+          <div className="mt-5">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground">
               Technologies
             </h4>
@@ -161,7 +161,7 @@ export function ProjectCard({
 
         {/* KEY FEATURES */}
         {visibleFeatures.length > 0 && (
-          <div className={featured ? "mt-7" : "mt-5"}>
+          <div className={featured ? "mt-6" : "mt-5"}>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-foreground">
               Key Features
             </h4>
@@ -182,7 +182,7 @@ export function ProjectCard({
         )}
 
         {/* LINKS */}
-        <div className="mt-8 flex flex-col gap-2.5 pt-1 sm:flex-row sm:flex-wrap">
+        <div className="mt-6 flex flex-col gap-2.5 pt-1 sm:flex-row sm:flex-wrap">
           {/* GitHub */}
           {githubUrl && !githubUrl.startsWith("YOUR_") && (
             <a

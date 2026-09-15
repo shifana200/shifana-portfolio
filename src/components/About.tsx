@@ -27,8 +27,9 @@ const focusAreas = [
 export function About() {
   return (
     <Section id="about" eyebrow="About" title="About me" muted>
-      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-14">
-        <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
+     <div className="grid gap-8 md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-12">
+          
+          <div className="max-w-2xl space-y-5 text-base leading-7 text-muted-foreground sm:text-[17px]">
           <p>
             I&apos;m a Full Stack MERN Developer focused on building responsive
             and practical web applications. I enjoy working across both

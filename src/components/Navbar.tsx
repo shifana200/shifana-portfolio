@@ -69,7 +69,7 @@ export function Navbar() {
           Shifana
         </a>
 
-        <nav aria-label="Main navigation" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-0.5 lg:flex">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className={linkClass(link.href)}>
               {link.label}

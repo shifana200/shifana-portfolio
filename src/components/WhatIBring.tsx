@@ -27,7 +27,7 @@ const points = [
 export function WhatIBring() {
   return (
     <Section id="what-i-bring" eyebrow="Why work with me" title="What I Bring">
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {points.map(({ icon: Icon, title, text }) => (
           <article key={title} className="rounded-2xl border border-border bg-card p-5">
             <span

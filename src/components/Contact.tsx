@@ -51,7 +51,8 @@ export function Contact() {
       subtitle="Have an opportunity or want to discuss a project? I'd love to hear from you."
       muted
     >
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+      
+      <div className="grid gap-6 md:gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
         <ul className="space-y-3">
           {[
             {
@@ -179,7 +180,7 @@ export function Contact() {
             </div>
           </div>
 
-          <button type="submit" className={actionClass("primary", "mt-5 w-full")}>
+          <button type="submit" className={actionClass("primary", "mt-4 w-full")}>
             <Send className="size-4" aria-hidden="true" />
             Send Message
           </button>

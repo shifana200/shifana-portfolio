@@ -22,99 +22,119 @@ export const projects: Project[] = [
     id: "cosmix",
     name: "Cosmix — Cosmetics E-Commerce Platform",
     description:
-      "A feature-rich full-stack cosmetics e-commerce platform built with Node.js, Express.js, MongoDB and EJS, covering the complete customer shopping journey alongside a dedicated admin management system for products, orders, users, inventory and sales.",
+      "A full-stack cosmetics e-commerce platform built with Node.js, Express.js, MongoDB and EJS, featuring a complete customer shopping experience and a dedicated admin dashboard for managing products, orders, users, inventory and sales.",
     tech: [
       "Node.js",
       "Express.js",
       "MongoDB",
       "Mongoose",
       "EJS",
-      "JWT",
+      "Passport.js",
       "OAuth 2.0",
       "Razorpay",
       "Nodemailer",
     ],
     features: [
-      "Secure authentication with JWT, Google OAuth, OTP verification and bcrypt password hashing",
+      "Secure authentication with Google OAuth, OTP verification and bcrypt password hashing",
       "Product discovery with search, filtering, sorting and pagination",
       "Complete shopping flow with wishlist, cart, coupons, offers and checkout",
       "Razorpay online payments and Cash on Delivery",
-      "Six admin modules covering products, categories, orders, users, offers and coupons",
+      "Admin management for products, categories, orders, users, offers and coupons",
       "Inventory management with low-stock alerts and complete order lifecycle tracking",
       "Wallet, referral rewards and refund management",
       "Admin analytics with sales charts, custom date-range filtering and report exports",
       "PDF and Excel invoice generation",
-      "MongoDB aggregation pipeline for optimized search, filtering and reporting queries",
+      "MongoDB aggregation pipelines for sales, category analytics and reporting",
     ],
-
+  
     video: cosmixVideo,
     videoPoster: cosmixOverallCollage,
-
+  
     image: cosmixOverallCollage,
     imageAlt:
       "Cosmix e-commerce application collage showing the homepage and key application screens",
-
+  
     githubUrl: "https://github.com/shifana200/CosmixProject",
-    liveUrl: " https://cosmix-project.onrender.com/",
+    liveUrl: "https://cosmix-project.onrender.com/",
     status: "completed",
   },
 
-  {
-    id: "budget",
-    name: "Budget Maintenance — Personal Finance Dashboard",
-    description:
-      "A full-stack personal finance application that helps users track income and expenses, organize transactions, monitor spending patterns and generate financial reports through an interactive dashboard.",
-    tech: [
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Mongoose",
-      "Tailwind CSS",
-      "Recharts",
-      "Axios",
-    ],
-    features: [
-      "Income and expense tracking with transaction management",
-      "Interactive dashboard for monitoring financial activity",
-      "Transaction filtering, pagination and category-based organization",
-      "Visual spending analysis using charts and graphs",
-      "Financial reports with downloadable report generation",
-      "REST API integration between React frontend and Express backend",
-    ],
-    image: budgetImage,
-    imageAlt:
-      "Budget Maintenance personal finance dashboard showing transactions and spending analytics",
-    githubUrl:
-      "https://github.com/shifana200/Budget-Maintanance",
-    liveUrl: "https://budget-maintanance.vercel.app/",
-    status: "completed",
-  },
-  {
-    id: "student-management",
-    name: "Student Management System",
-    description:
-      "A TypeScript-based management application for maintaining student records through a structured CRUD workflow, RESTful APIs and MongoDB data persistence.",
-    tech: [
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Mongoose",
-    ],
-    features: [
-      "Student record creation and management",
-      "Create, read, update and delete operations",
-      "RESTful API development",
-      "MongoDB database integration with Mongoose",
-      "TypeScript-based backend development",
-    ],
-    githubUrl:
-      "https://github.com/shifana200/Student-Management-Typescript",
-    liveUrl: " https://student-details-xi.vercel.app/",
-    status: "completed",
-  },
 
+{
+  id: "budget",
+  name: "Budget Maintenance — Personal Finance Dashboard",
+  description:
+    "A full-stack budget management application for tracking income and expenses, managing transactions, monitoring savings and analyzing financial activity through interactive dashboards and reports.",
+  tech: [
+    "React",
+    "Vite",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose",
+    "Tailwind CSS",
+    "Recharts",
+    "Axios",
+  ],
+  features: [
+    "Income and expense tracking with add, edit and delete transaction management",
+    "Dashboard with total income, expenses, savings and recent transaction history",
+    "Transaction search, filtering by type and date, and pagination",
+    "Category-based transaction organization for income and expenses",
+    "Interactive income vs expense and category-wise spending charts",
+    "Monthly financial analysis with week-wise income and expense reports",
+    "Financial statistics including savings and highest expense category",
+    "Downloadable financial reports",
+    "Responsive interface with client-side and server-side form validation",
+    "REST API integration between the React frontend and Express backend",
+  ],
+  image: "/src/assets/budget-maintanance.png",
+  imageAlt:
+    "Budget Maintenance personal finance dashboard showing transactions and financial analytics",
+  githubUrl:
+    "https://github.com/shifana200/Budget-Maintanance",
+  liveUrl: "https://budget-maintanance.vercel.app/",
+  status: "completed",
+},
+{
+  id: "student-management",
+  name: "Student Management System",
+  description:
+    "A full-stack student management application with secure authentication, student profile management and an admin dashboard for managing student records through a React frontend and Node.js, Express and MongoDB backend.",
+  tech: [
+    "React",
+    "Vite",
+    "Redux Toolkit",
+    "React Router",
+    "Axios",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose",
+    "JWT",
+    "bcrypt",
+    "Multer",
+  ],
+  features: [
+    "Student registration and login with JWT-based authentication",
+    "Protected student profile viewing and updating",
+    "Profile picture upload and management",
+    "Admin authentication with protected student management routes",
+    "Admin dashboard for creating, viewing, updating and deleting student records",
+    "Redux Toolkit for frontend state management",
+    "RESTful API integration between the React frontend and Express backend",
+    "MongoDB database integration using Mongoose",
+    "Password hashing with bcrypt",
+  ],
+  image: "/src/assets/budget-maintanance.png",
+  imageAlt:
+    "Student Management System showing student records and management interface",
+  githubUrl:
+    "https://github.com/shifana200/StudentDetails-Management",
+  liveUrl: "https://student-details-xi.vercel.app/",
+  status: "completed",
+},
   {
     id: "weather-api",
     name: "Weather App — Live Weather Application",

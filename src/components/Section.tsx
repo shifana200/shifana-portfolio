@@ -31,11 +31,19 @@ export function Section({ id, eyebrow, title, subtitle, children, className, mut
               </h2>
             )}
             {subtitle && (
+<<<<<<< HEAD
               <p className="mt-2 text-base leading-relaxed text-muted-foreground">{subtitle}</p>
             )}
           </div>
         )}
         <div className={cn(eyebrow || title ? "mt-7 md:mt-8" : undefined)}>{children}</div>
+=======
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{subtitle}</p>
+            )}
+          </div>
+        )}
+        <div className={cn(eyebrow || title ? "mt-6 md:mt-7" : undefined)}>{children}</div>
+>>>>>>> 88b78f3 (Fix section and hero spacing)
       </div>
     </section>
   );
