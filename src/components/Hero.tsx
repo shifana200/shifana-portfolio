@@ -37,14 +37,13 @@ export function Hero() {
               View My Projects
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
-
             <a
-              href={profile.resumeUrl}
-              className={actionClass("outline")}
-              data-placeholder-link="resume"
+           href={profile.resumeUrl}
+           download="Shifana-Resume.pdf"
+           className={actionClass("outline")}
             >
-              <Download className="size-4" aria-hidden="true" />
-              Download Resume
+           <Download className="size-4" aria-hidden="true" />
+           Download Resume
             </a>
           </div>
 

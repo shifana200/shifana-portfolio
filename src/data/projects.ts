@@ -1,6 +1,9 @@
 import cosmixVideo from "@/assets/cosmixVideo.mp4";
 import cosmixOverallCollage from "@/assets/cosmixOverallCollage.png";
-import budgetImage from "@/assets/project-budget.jpg";
+import weatherApp from "@/assets/weatherApp.png";
+import  budgetMaintanace from "@/assets/budget-maintanance.png";
+import todoApp from "@/assets/todoApp.png"
+import codenceImage from "@/assets/codenceImage.png"
 
 export type Project = {
   id: string;
@@ -88,7 +91,7 @@ export const projects: Project[] = [
     "Responsive interface with client-side and server-side form validation",
     "REST API integration between the React frontend and Express backend",
   ],
-  image: "/src/assets/budget-maintanance.png",
+  image: budgetMaintanace,
   imageAlt:
     "Budget Maintenance personal finance dashboard showing transactions and financial analytics",
   githubUrl:
@@ -136,56 +139,69 @@ export const projects: Project[] = [
   status: "completed",
 },
   {
-    id: "weather-api",
-    name: "Weather App — Live Weather Application",
-    description:
-      "A Node.js and Express-based weather application that integrates a third-party weather API to retrieve and display real-time weather information through a server-rendered interface.",
-    tech: [
-      "Node.js",
-      "Express.js",
-      "EJS",
-      "Axios",
-      "REST API",
-      "OpenWeather API",
-    ],
-    features: [
-      "Real-time weather data retrieval",
-      "Third-party OpenWeather API integration",
-      "Server-side rendering with EJS",
-      "Asynchronous API handling using Axios",
-      "Dynamic weather information based on user input",
-      "Environment-based API configuration",
-    ],
-    githubUrl:
-      "https://github.com/shifana200/Weather-App",
-    liveUrl: "https://weather-app-b5g9.onrender.com",
-    status: "completed",
-  },
+id: "weather-api",
+name: "Weather App — Real-Time Weather Application",
+description:
+"A server-rendered weather application built with Node.js and Express.js that fetches real-time weather data from the OpenWeatherMap API based on a user-provided city and displays key weather information through an EJS interface.",
+tech: [
+"Node.js",
+"Express.js",
+"EJS",
+"Axios",
+"OpenWeatherMap API",
+"dotenv",
+],
+features: [
+"Real-time weather data by city",
+"OpenWeatherMap API integration",
+"Server-side rendering with EJS",
+"Temperature and humidity information",
+"Weather condition descriptions",
+"City-based weather search",
+"Environment variable configuration for API credentials",
+"Error handling for invalid or missing city input",
+],
+image: weatherApp,
+imageAlt:
+  "Weather App displaying real-time weather information for a selected city",
+githubUrl:
+"https://github.com/shifana200/Weather-App",
+liveUrl: "https://weather-app-b5g9.onrender.com",
+status: "completed",
+},
+
 
  
-  {
-    id: "typescript-todo",
-    name: "TypeScript To-Do List",
-    description:
-      "A lightweight task management application built with TypeScript, designed to demonstrate typed data structures, DOM manipulation and interactive task management.",
-    tech: [
-      "TypeScript",
-      "HTML5",
-      "CSS3",
-      "DOM Manipulation",
-    ],
-    features: [
-      "Create and manage tasks",
-      "Mark tasks as completed",
-      "Edit existing tasks through an interactive modal",
-      "Delete tasks dynamically",
-      "Type-safe task data structure using TypeScript",
-    ],
-    githubUrl:
-      "https://github.com/shifana200/Typescript-TODO-LIST",
-    liveUrl: " https://todo-list00189.netlify.app/",
-    status: "completed",
+{
+  id: "typescript-todo",
+  name: "TypeScript To-Do List",
+  description:
+  "A browser-based task management application built with TypeScript, HTML and CSS that allows users to create, complete, edit and delete tasks through an interactive interface with a modal-based task editor.",
+  tech: [
+  "TypeScript",
+  "HTML5",
+  "CSS3",
+  "DOM Manipulation",
+  ],
+  features: [
+  "Create new tasks with user input",
+  "Mark tasks as completed using checkboxes",
+  "Edit existing tasks through an interactive modal",
+  "Delete tasks dynamically",
+  "Type-safe task management using a TypeScript interface",
+  "Dynamic DOM rendering and event handling",
+  "Input validation for task creation and editing",
+  ],
+  image: todoApp,
+  imageAlt:
+  "TypeScript To-Do List application showing tasks with add, edit and delete controls",
+  githubUrl:
+  "https://github.com/shifana200/Typescript-TODO-LIST",
+  liveUrl:
+  "https://todo-list00189.netlify.app/",
+  status: "completed",
   },
+  
   {
     id: "codence",
     name: "Codence — AI-Powered Job Portal",
@@ -206,6 +222,9 @@ export const projects: Project[] = [
       "Candidate and job management",
       "Personalized application assistance",
     ],
+    image: codenceImage,
+  imageAlt:
+  "AI powered job recommendation platform",
     figmaUrl: "https://www.figma.com/design/Jf34bNXWQAY45UchRCx7wx/CODENCE?node-id=0-1&p=f",
     databaseUrl: "https://app.eraser.io/workspace/40cwoZrlpPjqlEluqrcH",
     status: "in-progress",

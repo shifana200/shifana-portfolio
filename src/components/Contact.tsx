@@ -24,23 +24,58 @@ export function Contact() {
    * submission opens the visitor's email client with the message prefilled.
    * Replace this handler with an API call when a service is available.
    */
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+  
     const next: Errors = {};
-    if (values.name.trim().length < 2) next.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email.trim()))
+  
+    if (values.name.trim().length < 2) {
+      next.name = "Please enter your name.";
+    }
+  
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email.trim())) {
       next.email = "Please enter a valid email address.";
-    if (values.message.trim().length < 10)
+    }
+  
+    if (values.message.trim().length < 10) {
       next.message = "Please write at least 10 characters.";
-
+    }
+  
     setErrors(next);
+  
     if (Object.keys(next).length > 0) return;
-
-    const subject = encodeURIComponent(`Portfolio enquiry from ${values.name.trim()}`);
-    const body = encodeURIComponent(
-      `${values.message.trim()}\n\n—\n${values.name.trim()}\n${values.email.trim()}`,
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+  
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: values.name.trim(),
+          email: values.email.trim(),
+          message: values.message.trim(),
+        }),
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+  
+      alert("Message sent successfully!");
+  
+      setValues({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Sorry, your message could not be sent. Please try again.");
+    }
   };
 
   return (
@@ -186,13 +221,15 @@ export function Contact() {
           </button>
 
           <p id="form-note" className="mt-3 text-xs leading-relaxed text-muted-foreground">
-            No email service is connected yet, so submitting opens your email app with the message
-            prefilled. You can also email me directly at{" "}
-            <a href={`mailto:${profile.email}`} className="font-medium underline hover:text-accent">
-              {profile.email}
-            </a>
-            .
-          </p>
+  Your message will be sent directly to my inbox. You can also email me directly at{" "}
+  <a
+    href={`mailto:${profile.email}`}
+    className="font-medium underline hover:text-accent"
+  >
+    {profile.email}
+  </a>
+  .
+</p>
         </form>
       </div>
     </Section>

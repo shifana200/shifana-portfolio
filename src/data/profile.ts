@@ -6,7 +6,7 @@ export const profile = {
   github: "https://github.com/shifana200",
   linkedin: "https://www.linkedin.com/in/shifanasaleem/",
   /** Replace with the real resume file URL. */
-  resumeUrl: "YOUR_RESUME_URL",
+  resumeUrl: "/public/resume.pdf",
 };
 
 export const navLinks = [
